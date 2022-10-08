@@ -13,14 +13,13 @@
 
 <body>
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
-        </div>
+      <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
       </div>
-    <div class="container">
-        <label for="exampleDataList" class="form-label">Datalist example</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
-        <select class="form-select" aria-label="Default select example">
+    </div>
+    <form class="container">
+        <input class="form-control" list="datalistOptions" id="searchText" placeholder="Type to search..." />
+        <select class="form-select" id='formatSelector' aria-label="Default select example">
             <option selected>Select a format...</option>
             <option value="1">maps</option>
             <option value="2">audio</option>
@@ -32,9 +31,9 @@
             <option value="8">websites</option>
           </select>
         <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button">Click Here</button>
+            <button class="btn btn-primary" id="submitButton" type="button">Click Here</button>
           </div>
-    </div>
+    </form>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/JS/script.js"></script>
