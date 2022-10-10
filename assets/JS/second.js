@@ -1,4 +1,9 @@
 var resultsEL = document.getElementById('results');
+var goBackButton = document.getElementById("go-back")
+
+goBackButton.addEventListener("click", function(){
+    document.location = "./index.html"
+})
 
 //https://www.loc.gov/'
 
@@ -29,6 +34,13 @@ function getApi(){
             var inputDescription = document.createElement('p');
             var inputDate = document.createElement("p")
             var containerDiv = document.createElement("div");
+            var infoButton = document.createElement("a")
+            var buttonURL = data.results[i].url
+
+            infoButton.addEventListener("click", function(){
+                //document.location = data.results[i].url
+                console.log(buttonURL)
+            })
 
             containerDiv.setAttribute("class", "row bg-warning m-3");
 
@@ -36,14 +48,21 @@ function getApi(){
             inputTitle.textContent = data.results[i].title;
             inputDate.textContent = data.results[i].date;
             inputDescription.textContent = data.results[i].description;
+            infoButton.textContent = "Read More"
+            infoButton.setAttribute("href", data.results[i].url)
             
             console.log(inputDescription);
             
             containerDiv.appendChild(inputTitle);
             containerDiv.appendChild(inputDate);
             containerDiv.appendChild(inputDescription);
+            containerDiv.appendChild(infoButton)
 
             resultsEL.appendChild(containerDiv)
+
+            
+
+            
    
          };
          
